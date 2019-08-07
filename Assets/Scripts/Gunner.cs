@@ -101,7 +101,10 @@ public class Gunner : MonoBehaviour
     {
         GameObject enemy = collider.gameObject;
         if (collider.CompareTag(TagEnemy) && !enemies.Contains(enemy))
+        {
             enemies.Add(enemy);
+        }
+            
         
     }
 

@@ -97,7 +97,6 @@ public class ComradController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        print(health);
     }
      
 }

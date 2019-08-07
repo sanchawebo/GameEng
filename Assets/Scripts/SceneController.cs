@@ -82,6 +82,7 @@ public class SceneController : MonoBehaviour
         TowerPlacement();
         UiUpdate();
         SpawnTimerUpdate();
+        CheckForExit();
     }
 
 
@@ -194,7 +195,7 @@ public class SceneController : MonoBehaviour
                 break;
             case Incident.PlayerReachedNexus:
                 nexusHealth -= PlayerHitsNexus;
-                if (nexusHealth < 0)
+                if (nexusHealth <= 0)
                 {
                     GameOver();
                 }
@@ -232,5 +233,11 @@ public class SceneController : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    private void CheckForExit()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ShowGameOverScreen();
     }
 }
